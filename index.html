@@ -3,23 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video Embed</title>
+    <title>Daily Challenge 2000</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/game.css">
 </head>
 <body>
-    <h1>Audio:</h1>
+    <main>
+        <header>
+            <h1>Game Template</h1>
+            <a href="profile.html" class="profile-button">
+                <img src="../img/person.crop.circle.fill-b.png">
+            </a>
+        </header>
 
-    <div id="video-container">
-        <iframe id="youtube-video" width="560" height="315" 
-                src="https://www.youtube.com/embed/q3uXXh1sHcI?enablejsapi=1" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-    </div>
-
-    <button onclick="changeVideo('https://www.youtube.com/embed/bn8gP5N8hqM?enablejsapi=1')">Change Video</button>
-    <button onclick="togglePlayPause()">Play/Pause</button>
-
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="audio-tester.js"></script>
+        <div class="challenge-container">
+            <div class="error-container">
+            </div>
+            <div class="image-placeholder" id="album-container">
+                <img id="track-image" src="" alt="Track Cover" class="hidden">
+            </div>
+        </div>
+        <div class="track-info" id="track-info">
+            <p id="track-year" class="hidden">Release date: </p>
+            <p id="track-artist" class="hidden">Artist: </p>
+        </div>
+        <div class="audio-player">
+            <button id="shuffle-btn">
+                <img src="../img/shuffle.png" alt="Shuffle">
+            </button>
+            <button id="play-btn">
+                <img id="play-icon" src="../img/play.fill.png" alt="Play">
+            </button>
+            <button id="show-elements-btn">
+                <img src="../img/forward.fill.png" alt="Show Elements">
+            </button>
+        </div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Input">
+        </div>
+        <div class="attempts">
+            <div class="attempt-box"></div>
+            <div class="attempt-box"></div>
+            <div class="attempt-box"></div>
+            <div class="attempt-box"></div>
+        </div>
+        <div id="audio-player-container">
+            <iframe id="player" width="0" height="0" 
+                    src="https://www.youtube.com/embed/P18g4rKns6Q?enablejsapi=1" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </main>
+    <script src="https://www.youtube.com/iframe_api"></script> <!-- YouTube API -->
+    <script defer src="../js/game.js"></script>
 </body>
+
 </html>
