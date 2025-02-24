@@ -8,7 +8,9 @@ let trackImage = "https://i.scdn.co/image/ab67616d0000b273c5649add07ed3720be9d55
 let trackName = "Godspeed";
 let urlYouTube = "https://www.youtube.com/watch?v=P18g4rKns6Q";
 let player;
-let startTime = 30; // Guardamos el tiempo inicial en el que comienza el video
+
+let startTime = 50; // Guardamos el tiempo inicial en el que comienza el video
+let audio_duration = 10 //audio duration in seconds
 
 // Elements to be displayed in sequence
 const elements = [
@@ -105,7 +107,7 @@ function extractYouTubeId(url) {
 // Function to update the YouTube iframe with the new video ID
 function updateYouTubePlayer(videoId) {
     if (videoId) {
-        document.getElementById('player').src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&start=55`;
+        document.getElementById('player').src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1`;
     }
 }
 
@@ -119,7 +121,6 @@ function onYouTubeIframeAPIReady() {
         }
     });
 }
-
 
 
 // This function is called when the player is ready
@@ -161,7 +162,7 @@ function togglePlayPause() {
                 playButtonIcon.src = '../img/play.fill.png'; // Change icon back to play
                 // Revert the video to the start time (second 30) after pausing
                 player.seekTo(startTime);
-            }, 6000); // Pausa después de 6 segundos
+            }, audio_duration*1000); // Pausa después de x segundos
         }
     } else {
         console.log('Player is not initialized yet');
