@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Embed</title>
+</head>
+<body>
+    <h1>Audio:</h1>
+
+    <div id="video-container">
+        <iframe id="youtube-video" width="560" height="315" 
+                src="https://www.youtube.com/embed/q3uXXh1sHcI?enablejsapi=1" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <button onclick="changeVideo('https://www.youtube.com/embed/bn8gP5N8hqM?enablejsapi=1')">Change Video</button>
+    <button onclick="togglePlayPause()">Play/Pause</button>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../js/audio-tester.js"></script>
+</body>
+</html>
